@@ -1,0 +1,107 @@
+Documentación:
+
+Conceptos de Webpack
+https://webpack.js.org/concepts/
+
+- Entry
+- Output
+- Loaders
+- Plugins
+- Mode
+- Browser Compatibility
+
+1.  Tener instalado Node.js y NPM(Node Package Manager)
+2.  Procedemos a instalar via node las dependencias
+3.  Para eso inicializamos un proyecto de node.js con el siguiente comando:
+        $ npm init
+
+4.  Ingresamos los datos como ser:
+    package name: configuracion_webpack
+    description: Configuración de webpack
+    keyword: webpack
+    author: DanielCanaviri <canavirimenadaniel@gmail.com>
+    license: (ISC) MIT
+    ... por ultimo confirmamos con un yes 
+5.  Se podra observar que se crea una archivo llamado package.json, que llegaria a ser
+    el archivo de configuración del proyecto.
+
+6.  Ahora procedemos a instalar 2 dependencias muy importantes, las instalaremos como
+    dependencias de desarrollo, porque solo las utilizaremos en la fase de desarrollo de la
+    aplicación:
+        1. webpack
+        2. webpack-cli 
+    El cli es la interfaz de linea de comandos que nos permitira ejecutar todos los comandos que
+    vallamos utilizando en node.js.
+    Para instalar estas dos dependecias utilizaremos el siguiente comando:
+        $ npm i -D webpack webpack-cli
+
+    Donde los prefijos "i" significa instalar y "-D" significa instalar como dependencias de desarrollo.
+
+7.  Si observamos el archivo package.json se agregaron algunas lineas de código que son las 
+    siguientes:
+
+        "devDependencies": {
+            "webpack": "^5.21.0",
+            "webpack-cli": "^4.5.0"
+        }
+
+    Se genero un arbol de dependencias con el número de versión de webpack y de webpack-cli,
+    la sintaxis es la de un objeto llamado devDependencies.
+
+    Por otro lado se agrego un folder llamado node_modules que contiene dependencias asi como una archivo 
+    llamado package-lock.json con la descripción del nombre de dependencias con las que contamos y sus 
+    versiones.
+
+8.  Perfecto ahora procederemos a crear un comando que ejecute webpack, nos ubicamos en el archivo
+    package.json y agregamos lo siguiente donde esta el objeto scripts:
+
+        "script": {
+            "build": "webpack"
+        },
+    
+    Ejecutamos en la terminal el siguiente comando 
+
+        $ npm run build
+    
+    Esto me arrojara un WARNING y un ERROR
+    El warning nos avisa que no especificamos un modo :
+
+        WARNING in configuration
+        The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+
+    
+    y el error nos avisa que no se encontro el el directorio './src' :
+
+        ERROR in main
+        Module not found: Error: Can't resolve './src' in 'F:\WebPack-Configuración'
+        resolve './src' in 'F:\WebPack-Configuración'
+    
+    asi que creemos la carpeta de nombre src en la raiz del proyecto y dentro de este un archivo
+    llamado index.js.
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.udemy.com/course/build-social-network-in-20-days/?fbclid=IwAR2ZeOwwCOQ6B8HMjkQE6QJaW1qozBCHvIW8N5G9SIwiVL_MCGXmzifiduM&couponCode=SN_FEB_FREE

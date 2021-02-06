@@ -1,0 +1,15 @@
+{
+  "name": "configuracion_webpack",
+  "version": "1.0.0",
+  "description": "Configuración de webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "DanielCanaviri",
+  "license": "MIT"
+}
