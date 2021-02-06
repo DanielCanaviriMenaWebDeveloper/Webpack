@@ -79,6 +79,47 @@ https://webpack.js.org/concepts/
     asi que creemos la carpeta de nombre src en la raiz del proyecto y dentro de este un archivo
     llamado index.js.
 
+    Luego hacemos una modificación en el archivo package.json indicando que el archivo principal tenga la siguiente
+    ruta 'src/index.js', eso dentro la propiedad main del objeto package.json.
+
+        "main": "index.js",
+    
+    En el archivo index.js ya se podria comenzar a escribir lineas de código, escribiremos lo siguiente : 
+
+        (Input)
+
+            let a = 20;
+            let b = 30;
+            let suma = a + b;
+
+            console.log( suma );
+
+    Tomar en cuenta que hasta el momento no creamos un archivo de configuración llamado webpack.config.js
+    pero de todas formas igual funcionara.
+
+    Procedemos a ejecutar en la consola el comando: 
+
+        $ npm run build
+
+    Como podemos observar el warning seguira saliendo ya que no seleccionamos el modo que se refiere al 
+    modo de producción o modo de desarrollo.
+
+    Pero el error ya no existe y se compilo con exito la configuración, donde si observamos se genero un folder
+    llamado dist y dentro de este un archivo llamado main.js.
+
+    Por tanto nuestro archivo que esta dentro el folder src llamado index.js sera nuestro Punto de Entrada y 
+    el archivo main.js dentro del folder dist sera el Punto de Salida.
+
+    En el archivo main.js observamos el código transpilado de nuestro index.js que se obsrva de la siguiente manera :
+
+        (Output)
+
+            console.log(50);
+
+    
+    
+
+
 
     
     
