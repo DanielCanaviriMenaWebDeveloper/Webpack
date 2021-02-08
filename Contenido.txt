@@ -180,15 +180,65 @@ https://webpack.js.org/concepts/
     Nosotros podemos cambiar tanto el punto de entrada como el punto de salida y se lo puede realizar tambien
     desde la linea de comandos de webpack (webpack-cli) sin nesecidad de utilizar un archivo de configuración.
 
+    Vamos a crear dos comandos mas, uno llamado dev-foo y build-foo.
+    Agregamos la bandera --entry y a continuación especificar la nueva ruta del punto de entrada, asi como tambien 
+    agregamos la bandra --output-path y a continuación especificar la nueva ruta del punto de salida.
 
+        "scripts": {
+            "dev-foo" : "webpack --mode development --entry ./foo/src/index.js --output-path ./foo/dist",
+            "build-foo" : "webpack --mode production --entry ./foo/src/index.js --output-path ./foo/dist"
+        },
+
+    Recordermos que en la ruta ./foo/dist que estoy definiendo se generara un archivo llamado main.js 
+    Previamente crear el folder llamado foo, dentro de esta otro folder llamado src y por ultimo dentro este 
+    el archivo index.js
+
+    Ejecutemos el comando dev-foo 
+
+        $ npm run dev-foo
+
+        Resultado de ejecutar el comando: 
+
+            > configuracion_webpack@1.0.0 dev-foo F:\WebPack-Configuración
+            > webpack --mode development --entry ./foo/src/index.js --output-path ./foo/dist
+
+            asset main.js 959 bytes [emitted] (name: main)
+            ./foo/src/index.js 149 bytes [built] [code generated]
+            webpack 5.21.2 compiled successfully in 246 ms
+
+    El archivo modo desarrollo main.js se encotrara dentro el folder dist generado como punto de salida.
+
+    Ejecutemos el comando build-foo
+
+        $ npm run build-foo
+    
+        Resultado de ejecutar el comando
+
+            > configuracion_webpack@1.0.0 build-foo F:\WebPack-Configuración
+            > webpack --mode production --entry ./foo/src/index.js --output-path ./foo/dist
+
+            asset main.js 83 bytes [emitted] [minimized] (name: main)
+            ./foo/src/index.js 149 bytes [built] [code generated]
+            webpack 5.21.2 compiled successfully in 641 ms
+
+
+    De esta manera podemos definir distintos puntos de entrada y generar distintos puntos de salida.
+    
+    Para ver la documentación de la API 
+    https://webpack.js.org/api/
+
+    Mas sobre el CLI
+    https://webpack.js.org/api/cli/
+
+    Tambien ejecutando en la linea de comandos el comando 
+
+        $ webpack -h 
+
+    Nos facilitara la documentacion de webpack y el cli.
 
     
-    
 
 
-
-    
-    
 
 
 
