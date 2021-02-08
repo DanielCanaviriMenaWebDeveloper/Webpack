@@ -21,7 +21,8 @@ https://webpack.js.org/concepts/
     keyword: webpack
     author: DanielCanaviri <canavirimenadaniel@gmail.com>
     license: (ISC) MIT
-    ... por ultimo confirmamos con un yes 
+    ... por ultimo confirmamos con un yes
+
 5.  Se podra observar que se crea una archivo llamado package.json, que llegaria a ser
     el archivo de configuración del proyecto.
 
@@ -115,6 +116,71 @@ https://webpack.js.org/concepts/
         (Output)
 
             console.log(50);
+    ===================================================================================================================
+    Modos de Webpack
+    ===================================================================================================================
+    Hacen referencia al ambiente para el cual webpack va preparar el build, que serian 2:
+        - Ambiente de Desarrollo (dev)
+        - Ambiente de Producción (build)
+    Agregemos al comando build la bandera llamada --mode y especificamos que sera modo producción :
+
+        "scripts": {
+            "build": "webpack --mode production",
+        }
+    Agregemos al comando dev la bandera llamada --mode y especificamos que sera en modo desarrollo :
+
+        "scripts": {
+            "dev": "webpack --mode development",
+        }
+
+    Lo tendremos de esta manera dentro el package.json
+
+        "scripts": {
+            "dev" : "webpack --mode development",
+            "build": "webpack --mode production"
+        },
+
+    Ahora escribimos el siguiente comando: 
+
+        $ nmp run build 
+
+    Con todo esto la configuración se ejecutara con exito en modo producción
+
+        Mensaje visualizado en consola: 
+        
+        > configuracion_webpack@1.0.0 build F:\WebPack-Configuración
+        > webpack --mode production
+
+        asset main.js 16 bytes [compared for emit] [minimized] (name: main)
+        ./src/index.js 75 bytes [built] [code generated]
+        webpack 5.21.2 compiled successfully in 596 ms
+
+    Ahora con el otro comando
+
+        $ npm run dev
+
+    Esto permitira compilar en modo desarrollo 
+
+        Mensaje visualizado en consola:
+
+        asset main.js 865 bytes [emitted] (name: main)
+        ./src/index.js 75 bytes [built] [code generated]
+        webpack 5.21.2 compiled successfully in 221 ms
+
+    A diferencia de el modo dev que genera un código mas extenso, build nos genera una código minificado.
+    El archivo generado en modo producción pesa menos y esta empaquetado para su despliegue.
+
+    Hasta el momento no se creo un archivo de configuración webpack.config sin embargo esto no evito
+    poder trabajar con webpack.
+
+    ===================================================================================================================
+    Diferentes puntos de entrada y salida desde la CLI
+    ===================================================================================================================
+
+    Nosotros podemos cambiar tanto el punto de entrada como el punto de salida y se lo puede realizar tambien
+    desde la linea de comandos de webpack (webpack-cli) sin nesecidad de utilizar un archivo de configuración.
+
+
 
     
     
